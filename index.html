@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="value" value="0" >
+        
+            <button class="color-secondary" id="modulous_btn">%</button>
+            <button class="color-secondary" onclick="clearAll()">CE</button>
+            <button class="color-secondary" id="clear">C</button>
+            <button class="color-secondary" onclick="back()">back</button>
+            <button class="color-secondary" onclick="clearAll()">1/x</button>
+            <button class="color-secondary" onclick="squareRoot()">x<sup>2</sup></button>
+            <button class="color-secondary" onclick="calRoot()">√x</button>
+            <button class="color-secondary" id="division">/</button>
+            <button class="color-light" id="seven">7</button>
+            <button class="color-light" id="eight">8</button>
+            <button class="color-light" id="nine">9</button>
+            <button class="color-secondary" id="multiply">*</button>
+            <button class="color-light" id="four">4</button>
+            <button class="color-light" id="five">5</button>
+            <button class="color-light" id="six">6</button>
+            <button class="color-secondary" id="minus">-</button>
+            <button class="color-light" id="one">1</button>
+            <button class="color-light" id="two">2</button>
+            <button class="color-light" id="three">3</button>
+            <button class="color-secondary" id="add">+</button>
+            <button class="color-light" onclick="clearAll()">+/-</button>
+            <button class="color-light" id="zero">0</button>
+            <button class="color-light" id="dot">.</button>
+            <button class="color-highlight" id="result">=</button>
+
+    </div>
+    <script>
+
+        //buttons work
+        let checkBtn=false;
+
+        let one=document.getElementById("one");
+        let two=document.getElementById("two");
+        let three=document.getElementById("three");
+        let four=document.getElementById("four");
+        let five=document.getElementById("five");
+        let six=document.getElementById("six");
+        let seven=document.getElementById("seven");
+        let eight=document.getElementById("eight");
+        let nine=document.getElementById("nine");
+        let zero=document.getElementById("zero");
+        let dot=document.getElementById("dot");
+
+
+        let value=document.getElementById("value");
+
+        one.addEventListener('click',()=>{
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"1";
+            checkBtn=true;
+            
+        })
+        two.addEventListener('click',()=>{
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"2";
+            checkBtn=true;
+        })
+        three.addEventListener('click',()=>{
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"3";
+            checkBtn=true;
+        })
+        four.addEventListener('click',()=>{
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"4";
+            checkBtn=true;
+        })
+        five.addEventListener('click',()=>{
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"5";
+            checkBtn=true;
+        })
+        six.addEventListener('click',()=>{
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"6";
+            checkBtn=true;
+        })
+        seven.addEventListener('click',()=>{
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"7";
+            checkBtn=true;
+        })
+        eight.addEventListener('click',()=>{
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"8";
+            checkBtn=true;
+        })
+        nine.addEventListener('click',()=>{
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"9";
+            checkBtn=true;
+        })
+        zero.addEventListener('click',()=>{
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"0";
+            checkBtn=true;
+        })
+        dot.addEventListener('click',()=>{
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+".";
+            checkBtn=true;
+        })
+        document.getElementById("clear").addEventListener('click',()=>{
+            value.value=0;
+        })
+
+
+        //operators work
+
+        let modoulus=document.getElementById("modulous_btn");
+        let minus=document.getElementById("minus");
+        let add=document.getElementById("add");
+        let division=document.getElementById("division");
+        let multiply=document.getElementById("multiply");
+
+        
+
+        modoulus.addEventListener('click',()=>{
+            if(checkBtn)
+            {
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"%";
+            checkBtn=false;
+        }
+        })
+        minus.addEventListener('click',()=>{
+            if(checkBtn)
+            {
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"-";
+            checkBtn=false;
+        }
+        })
+        add.addEventListener('click',()=>{
+            if(checkBtn)
+            {
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"+";
+            checkBtn=false;
+        }
+        })
+        division.addEventListener('click',()=>{
+            if(checkBtn)
+            {
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"/";
+            checkBtn=false;
+        }
+        })
+        multiply.addEventListener('click',()=>{
+            if(checkBtn)
+            {
+            let temp=value.value;
+            if(temp=="0")
+            {
+                temp="";
+            }
+            value.value="";
+            value.value=temp+"*";
+            checkBtn=false;
+        }
+        })
+        
+        //result
+        let result=document.getElementById("result");
+        result.addEventListener('click',()=>{
+            if(value.value=="0")
+            {
+                alert("Enter some numbers to perform calculations");
+            }
+            else
+            {
+               let ans=eval(value.value);
+                value.value=ans;
+            }
+        })
+
+        //sqaure root
+        function squareRoot(){
+            let temp=value.value;
+            value.value=temp*temp;
+        }
+
+        //code and logic to cancel one digit from the number
+        function back(){
+            let num=parseInt(value.value);
+            
+            if(num!=0)
+            {
+                num=num/10;
+                
+            }
+            value.value=Math.floor(num);
+        }
+        //code for square root
+        function calRoot(){
+            let num=value.value;
+            if(num!=0)
+            {
+                value.value=Math.sqrt(num);
+            }
+        }
+
+        //clear everything
+        function clearAll()
+        {
+            value.value=0;
+        }
+    </script>
+</body>
+</html>
